@@ -1,0 +1,17 @@
+INFO:     Started server process [94758]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8006 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57411 - "GET /api/tasks?skip=0&limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57424 - "GET /api/tasks?skip=0&limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57435 - "GET /api/cases?skip=0&limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59969 - "POST /api/generate/har HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60173 - "POST /api/generate/har HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60175 - "GET /api/cases?skip=0&limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60299 - "DELETE /api/cases/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60301 - "GET /api/cases?skip=0&limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60366 - "GET /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [94758]
