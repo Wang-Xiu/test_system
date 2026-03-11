@@ -1,0 +1,6 @@
+INFO     test_engine:http_client.py:50 Request: GET https://httpbin.org/get
+DEBUG    test_engine:http_client.py:52 Params: {'user_id': 1001}
+INFO     test_engine:http_client.py:63 Response: 200 (252.22ms)
+DEBUG    test_engine:http_client.py:66 Response Body: {"args": {"user_id": "1001"}, "headers": {"Accept": "*/*", "Accept-Encoding": "gzip, deflate", "Content-Type": "application/json", "Host": "httpbin.org", "User-Agent": "python-requests/2.32.5", "X-Amzn-Trace-Id": "Root=1-69b114f4-5081b178368468784bb58aef"}, "origin": "40.65.59.116", "url": "https://httpbin.org/get?user_id=1001"}
+INFO     test_engine:validator.py:60 Assertion passed: status_code == 200
+INFO     test_engine:validator.py:60 Assertion passed: body.args.user_id == 1001
