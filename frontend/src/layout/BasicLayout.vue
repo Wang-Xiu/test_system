@@ -16,17 +16,29 @@
           <el-icon><DataLine /></el-icon>
           <span>数据看板</span>
         </el-menu-item>
+        <el-menu-item index="/projects">
+          <el-icon><FolderOpened /></el-icon>
+          <span>项目管理</span>
+        </el-menu-item>
         <el-menu-item index="/cases">
           <el-icon><Document /></el-icon>
           <span>用例管理</span>
+        </el-menu-item>
+        <el-menu-item index="/suites">
+          <el-icon><Collection /></el-icon>
+          <span>测试套件</span>
         </el-menu-item>
         <el-menu-item index="/tasks">
           <el-icon><Monitor /></el-icon>
           <span>任务记录</span>
         </el-menu-item>
+        <el-menu-item index="/schedules">
+          <el-icon><Timer /></el-icon>
+          <span>定时任务</span>
+        </el-menu-item>
       </el-menu>
     </el-aside>
-    
+
     <el-container>
       <el-header class="header">
         <div class="header-content">
@@ -39,7 +51,7 @@
           </div>
         </div>
       </el-header>
-      
+
       <el-main class="main-content">
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">
@@ -53,7 +65,7 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { Document, Monitor, UserFilled, DataLine } from '@element-plus/icons-vue'
+import { Document, Monitor, UserFilled, DataLine, FolderOpened, Collection, Timer } from '@element-plus/icons-vue'
 
 const route = useRoute()
 </script>
@@ -127,7 +139,6 @@ const route = useRoute()
   padding: 20px;
 }
 
-/* 路由切换动画 */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;

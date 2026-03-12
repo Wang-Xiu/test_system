@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+cryptography
+alembic
+celery
+redis
+pytest
+requests
+pyyaml
+allure-pytest
+pydantic
+croniter
+httpx
+python-multipart

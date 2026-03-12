@@ -8,7 +8,7 @@ celery_app = Celery(
     "auto_test_scheduler",
     broker=REDIS_URL,
     backend=REDIS_URL,
-    include=["backend.scheduler.tasks"]
+    include=["backend.scheduler.tasks", "backend.scheduler.scheduler"]
 )
 
 celery_app.conf.update(
@@ -18,4 +18,10 @@ celery_app.conf.update(
     timezone="Asia/Shanghai",
     enable_utc=True,
     task_track_started=True,
+    beat_schedule={
+        "check-scheduled-jobs": {
+            "task": "backend.scheduler.scheduler.check_scheduled_jobs",
+            "schedule": 60.0,  # Every 60 seconds
+        },
+    },
 )

@@ -5,6 +5,9 @@ request:
   json:
     username: test
     password: 123456
+extract:
+  - token: body.json.username
+  - request_url: body.url
 validate:
   - eq:
       status_code: 200
@@ -14,12 +17,14 @@ validate:
       status_code: [200, 201]
 
 ---
-name: 获取用户信息
+name: 获取用户信息（使用提取的变量）
 request:
   method: GET
   url: https://httpbin.org/get
   params:
     user_id: 1001
+    token: ${token}
+    timestamp: ${__timestamp}
 validate:
   - eq:
       status_code: 200

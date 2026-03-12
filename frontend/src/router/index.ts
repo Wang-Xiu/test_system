@@ -15,6 +15,18 @@ const routes: Array<RouteRecordRaw> = [
         meta: { title: '数据看板' }
       },
       {
+        path: 'projects',
+        name: 'ProjectList',
+        component: () => import('@/views/project/ProjectList.vue'),
+        meta: { title: '项目管理' }
+      },
+      {
+        path: 'projects/:id',
+        name: 'ProjectDetail',
+        component: () => import('@/views/project/ProjectDetail.vue'),
+        meta: { title: '项目详情' }
+      },
+      {
         path: 'cases',
         name: 'CaseList',
         component: () => import('@/views/case/CaseList.vue'),
@@ -25,6 +37,24 @@ const routes: Array<RouteRecordRaw> = [
         name: 'TaskList',
         component: () => import('@/views/task/TaskList.vue'),
         meta: { title: '任务执行记录' }
+      },
+      {
+        path: 'suites',
+        name: 'SuiteList',
+        component: () => import('@/views/suite/SuiteList.vue'),
+        meta: { title: '测试套件' }
+      },
+      {
+        path: 'suites/:id',
+        name: 'SuiteEdit',
+        component: () => import('@/views/suite/SuiteEdit.vue'),
+        meta: { title: '编辑套件' }
+      },
+      {
+        path: 'schedules',
+        name: 'ScheduleList',
+        component: () => import('@/views/schedule/ScheduleList.vue'),
+        meta: { title: '定时任务' }
       }
     ]
   }

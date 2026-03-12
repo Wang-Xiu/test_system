@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /Users/xiu/play/test_system/backend/api/ | grep -E \"\\\\.py$\")",
+      "Bash(grep -rh \"^import\\\\|^from\" backend/ test-engine/ tools/ --include=\"*.py\" 2>/dev/null | grep -E \"^\\(import|from\\) [a-z_]+|^from [a-z_]+ import\" | sed 's/ as .*//' | sed 's/ import.*//' | grep -v \"^import\\\\|^from \\\\.\" | sort -u)",
+      "Bash(grep -rh \"^import\\\\|^from\" backend/ test-engine/ --include=\"*.py\" 2>/dev/null | grep -v \"^import\\\\|^from \\\\.\" | grep \"^from [a-z_]\" | cut -d' ' -f2 | cut -d'.' -f1 | sort -u | grep -v \"^backend$\\\\|^core$\\\\|^tools$\\\\|^datetime$\\\\|^pathlib$\\\\|^typing$\\\\|^sqlalchemy$\\\\|^pydantic$\\\\|^fastapi$\")"
+    ]
+  }
+}

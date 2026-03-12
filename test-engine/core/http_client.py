@@ -11,7 +11,7 @@ class HttpClient:
         self.base_url = base_url
         self.timeout = timeout
         self.session = requests.Session()
-        
+
         # Setup retry strategy
         retry_strategy = Retry(
             total=max_retries,
@@ -22,11 +22,45 @@ class HttpClient:
         adapter = HTTPAdapter(max_retries=retry_strategy)
         self.session.mount("http://", adapter)
         self.session.mount("https://", adapter)
-        
+
         # Common headers
         self.session.headers.update({
             "Content-Type": "application/json"
         })
+
+    @classmethod
+    def from_config(cls, config_path: str) -> "HttpClient":
+        """Create an HttpClient from a JSON configuration file."""
+        with open(config_path, "r", encoding="utf-8") as f:
+            config = json.load(f)
+
+        client = cls(base_url=config.get("base_url", ""))
+
+        # Apply custom headers
+        headers = config.get("headers", {})
+        if headers:
+            client.session.headers.update(headers)
+
+        # Apply auth config
+        auth_config = config.get("auth_config", {})
+        auth_type = auth_config.get("type", "")
+        if auth_type == "bearer":
+            client.set_token(auth_config.get("token", ""))
+        elif auth_type == "basic":
+            from requests.auth import HTTPBasicAuth
+            client.session.auth = HTTPBasicAuth(
+                auth_config.get("username", ""),
+                auth_config.get("password", ""),
+            )
+        elif auth_type == "api_key":
+            key_name = auth_config.get("api_key_name", "X-API-Key")
+            key_value = auth_config.get("api_key_value", "")
+            client.session.headers[key_name] = key_value
+        elif auth_type == "custom":
+            custom_headers = auth_config.get("custom_headers", {})
+            client.session.headers.update(custom_headers)
+
+        return client
 
     def set_token(self, token: str, prefix: str = "Bearer "):
         """Set authorization token for all requests"""
