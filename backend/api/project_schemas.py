@@ -9,6 +9,7 @@ class ProjectCreate(BaseModel):
     name: str
     description: Optional[str] = None
     base_url: Optional[str] = None
+    auth_config: Optional[Dict[str, Any]] = None
 
 
 class ProjectUpdate(BaseModel):
@@ -17,6 +18,7 @@ class ProjectUpdate(BaseModel):
     base_url: Optional[str] = None
     webhook_secret: Optional[str] = None
     notification_config: Optional[Dict[str, Any]] = None
+    auth_config: Optional[Dict[str, Any]] = None
 
 
 class ProjectResponse(BaseModel):
@@ -26,6 +28,7 @@ class ProjectResponse(BaseModel):
     base_url: Optional[str] = None
     webhook_secret: Optional[str] = None
     notification_config: Optional[Dict[str, Any]] = None
+    auth_config: Optional[Dict[str, Any]] = None
     created_at: datetime
     updated_at: Optional[datetime] = None
 

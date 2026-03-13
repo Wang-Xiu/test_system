@@ -19,6 +19,12 @@ class DebugRequest(BaseModel):
     environment_id: Optional[int] = None
 
 
+@router.post("/test/login")
+def mock_login(req: dict):
+    if req.get("username") == "testuser" and req.get("password") == "123":
+        return {"code": 0, "token": "mock_token_123456"}
+    return {"code": 1, "msg": "invalid credentials"}
+
 @router.post("/run")
 def debug_run(data: DebugRequest, db: Session = Depends(get_db)):
     """Run a single test case synchronously for debugging."""

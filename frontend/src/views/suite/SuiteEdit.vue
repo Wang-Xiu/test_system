@@ -80,7 +80,8 @@ const refreshAvailable = () => {
 
 onMounted(async () => {
   suite.value = await getSuite(suiteId)
-  allCases.value = await getCases(0, 1000, suite.value?.project_id)
+  // 如果套件没有关联项目，或者想显示所有用例，可以不传 project_id
+  allCases.value = await getCases(0, 1000, suite.value?.project_id || undefined)
   selectedCases.value = (suite.value?.cases || []).map(c => ({ id: c.id, name: c.name }))
   refreshAvailable()
 })

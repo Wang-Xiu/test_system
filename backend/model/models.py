@@ -39,6 +39,19 @@ suite_case_association = Table(
 
 # ---------- Project & Environment ----------
 
+class TestAccount(Base):
+    __tablename__ = "test_accounts"
+
+    id = Column(Integer, primary_key=True, index=True)
+    project_id = Column(Integer, index=True, nullable=False, comment="所属项目ID")
+    name = Column(String(100), nullable=False, comment="账号名称/标识")
+    username = Column(String(100), nullable=False, comment="登录用户名/UID")
+    password = Column(String(255), nullable=True, comment="登录密码/凭证")
+    description = Column(String(255), nullable=True, comment="账号描述")
+    status = Column(Integer, default=1, comment="状态：1-正常，0-禁用")
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+
 class Project(Base):
     __tablename__ = "projects"
 
@@ -48,6 +61,7 @@ class Project(Base):
     base_url = Column(String(500), nullable=True, comment="默认 Base URL")
     webhook_secret = Column(String(255), nullable=True, comment="Webhook 密钥")
     notification_config = Column(JSON, nullable=True, comment="通知配置")
+    auth_config = Column(JSON, nullable=True, comment="标准登录API配置")
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 

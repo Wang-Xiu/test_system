@@ -1,2 +1,6 @@
 logs/*
 reports/*
+backend.log
+celery.log
+celery-beat.log
+frontend.log

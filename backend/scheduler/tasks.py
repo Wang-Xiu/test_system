@@ -3,6 +3,7 @@ import tempfile
 import pytest
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 from backend.scheduler.celery_app import celery_app
 from backend.database import SessionLocal
 from backend.model.models import TestCase, TestTask, TaskStatus
@@ -121,7 +122,7 @@ def run_test_cases_task(self, task_id: int, case_ids: list[int], environment_id:
         db.close()
 
 
-def _build_env_config(db, environment_id: int) -> dict | None:
+def _build_env_config(db, environment_id: int) -> Optional[dict]:
     """Build environment configuration dict for test engine."""
     from backend.model.models import Environment, Variable
 

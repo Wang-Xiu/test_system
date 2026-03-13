@@ -5,7 +5,7 @@ from backend.database import engine, Base
 from backend.api import (
     testcase, task, dashboard, generator,
     project, environment, variable,
-    suite, webhook, schedule, debug,
+    suite, webhook, schedule, debug, account, auth
 )
 import os
 
@@ -39,6 +39,8 @@ app.include_router(suite.router)
 app.include_router(webhook.router)
 app.include_router(schedule.router)
 app.include_router(debug.router)
+app.include_router(account.router)
+app.include_router(auth.router)
 
 # Mount static files for reports
 reports_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "reports", "allure-report")

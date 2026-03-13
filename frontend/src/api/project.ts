@@ -7,6 +7,7 @@ export interface Project {
   base_url?: string
   webhook_secret?: string
   notification_config?: Record<string, any>
+  auth_config?: Record<string, any>
   created_at: string
   updated_at?: string
 }

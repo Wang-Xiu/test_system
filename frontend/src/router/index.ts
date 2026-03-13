@@ -27,6 +27,12 @@ const routes: Array<RouteRecordRaw> = [
         meta: { title: '项目详情' }
       },
       {
+        path: 'accounts',
+        name: 'AccountList',
+        component: () => import('@/views/account/AccountList.vue'),
+        meta: { title: '账号管理' }
+      },
+      {
         path: 'cases',
         name: 'CaseList',
         component: () => import('@/views/case/CaseList.vue'),

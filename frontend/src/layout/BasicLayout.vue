@@ -20,6 +20,10 @@
           <el-icon><FolderOpened /></el-icon>
           <span>项目管理</span>
         </el-menu-item>
+        <el-menu-item index="/accounts">
+          <el-icon><User /></el-icon>
+          <span>账号管理</span>
+        </el-menu-item>
         <el-menu-item index="/cases">
           <el-icon><Document /></el-icon>
           <span>用例管理</span>
@@ -65,7 +69,7 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { Document, Monitor, UserFilled, DataLine, FolderOpened, Collection, Timer } from '@element-plus/icons-vue'
+import { Document, Monitor, UserFilled, DataLine, FolderOpened, Collection, Timer, User } from '@element-plus/icons-vue'
 
 const route = useRoute()
 </script>
