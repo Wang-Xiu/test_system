@@ -1,0 +1,6 @@
+INFO     test_engine:http_client.py:84 Request: GET https://httpbin.org/get
+DEBUG    test_engine:http_client.py:86 Params: {'user_id': 1001, 'token': 'test', 'timestamp': '${__timestamp}'}
+INFO     test_engine:http_client.py:97 Response: 200 (21.47ms)
+DEBUG    test_engine:http_client.py:100 Response Body: {"args": {"timestamp": "${__timestamp}", "token": "test", "user_id": "1001"}, "headers": {"Accept": "*/*", "Accept-Encoding": "gzip, deflate", "Content-Type": "application/json", "Host": "httpbin.org", "User-Agent": "python-requests/2.32.5", "X-Amzn-Trace-Id": "Root=1-69be186e-5a7fd21d7612f03271adafe0"}, "origin": "64.236.134.161", "url": "https://httpbin.org/get?user_id=1001&token=test&timestamp=%24{__timestamp}"}
+INFO     test_engine:validator.py:60 Assertion passed: status_code == 200
+INFO     test_engine:validator.py:60 Assertion passed: body.args.user_id == 1001
