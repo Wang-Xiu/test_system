@@ -1,1 +1,0 @@
-[{'eq': {'status_code': 200}}, {'eq': {'body.args.user_id': '1001'}}]
