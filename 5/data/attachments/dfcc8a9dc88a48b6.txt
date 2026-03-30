@@ -1,7 +1,0 @@
-INFO     test_engine:http_client.py:50 Request: POST https://httpbin.org/post
-DEBUG    test_engine:http_client.py:54 Body: {"username": "test", "password": 123456}
-INFO     test_engine:http_client.py:63 Response: 200 (252.96ms)
-DEBUG    test_engine:http_client.py:66 Response Body: {"args": {}, "data": "{\"username\": \"test\", \"password\": 123456}", "files": {}, "form": {}, "headers": {"Accept": "*/*", "Accept-Encoding": "gzip, deflate", "Content-Length": "40", "Content-Type": "application/json", "Host": "httpbin.org", "User-Agent": "python-requests/2.32.5", "X-Amzn-Trace-Id": "Root=1-69b23cf8-7587d5cf2f86053f5a89db75"}, "json": {"password": 123456, "username": "test"}, "origin": "172.215.217.105", "url": "https://httpbin.org/post"}
-INFO     test_engine:validator.py:60 Assertion passed: status_code == 200
-INFO     test_engine:validator.py:77 Assertion passed: body.json.username contains test
-INFO     test_engine:validator.py:86 Assertion passed: status_code in [200, 201]
