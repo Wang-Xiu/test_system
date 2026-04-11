@@ -1,3 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"Source file: /home/runner/work/test_system/test_system/test-engine/data/login.yaml","118","用户登录测试","test-engine.tests","Sun Mar 22 04:18:26 UTC 2026","passed","Sun Mar 22 04:18:27 UTC 2026","","test_runner","",""
-"Source file: /home/runner/work/test_system/test_system/test-engine/data/login.yaml","8","获取用户信息（使用提取的变量）","test-engine.tests","Sun Mar 22 04:18:27 UTC 2026","passed","Sun Mar 22 04:18:27 UTC 2026","","test_runner","",""
