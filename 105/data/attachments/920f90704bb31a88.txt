@@ -1,0 +1,3 @@
+INFO     test_engine:http_client.py:84 Request: GET https://httpbin.org/get
+DEBUG    test_engine:http_client.py:86 Params: {'user_id': 1001, 'token': '${token}', 'timestamp': '${__timestamp}'}
+ERROR    test_engine:http_client.py:108 Request Failed: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get?user_id=1001&token=%24%7Btoken%7D&timestamp=%24%7B__timestamp%7D (Caused by ResponseError('too many 503 error responses')) (6243.65ms)
