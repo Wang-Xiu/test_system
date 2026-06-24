@@ -1,0 +1,21 @@
+{
+  "args": {}, 
+  "data": "{\"username\": \"test\", \"password\": 123456}", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Length": "40", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.32.5", 
+    "X-Amzn-Trace-Id": "Root=1-6a3b734d-53c0cde601bb9e9b29c9f178"
+  }, 
+  "json": {
+    "password": 123456, 
+    "username": "test"
+  }, 
+  "origin": "145.132.100.178", 
+  "url": "https://httpbin.org/post"
+}
