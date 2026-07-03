@@ -1,7 +1,0 @@
-INFO     test_engine:http_client.py:84 Request: GET https://httpbin.org/get
-DEBUG    test_engine:http_client.py:86 Params: {'user_id': 1001, 'token': 'test', 'timestamp': '${__timestamp}'}
-WARNING  urllib3.connectionpool:connectionpool.py:868 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10)")': /get?user_id=1001&token=test&timestamp=%24%7B__timestamp%7D
-INFO     test_engine:http_client.py:97 Response: 200 (19126.99ms)
-DEBUG    test_engine:http_client.py:100 Response Body: {"args": {"timestamp": "${__timestamp}", "token": "test", "user_id": "1001"}, "headers": {"Accept": "*/*", "Accept-Encoding": "gzip, deflate", "Content-Type": "application/json", "Host": "httpbin.org", "User-Agent": "python-requests/2.32.5", "X-Amzn-Trace-Id": "Root=1-6a2cf51e-7d24030b568e3b8552266a56"}, "origin": "172.172.87.81", "url": "https://httpbin.org/get?user_id=1001&token=test&timestamp=%24{__timestamp}"}
-INFO     test_engine:validator.py:60 Assertion passed: status_code == 200
-INFO     test_engine:validator.py:60 Assertion passed: body.args.user_id == 1001
