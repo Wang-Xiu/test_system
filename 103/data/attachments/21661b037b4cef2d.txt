@@ -1,3 +1,0 @@
-INFO     test_engine:http_client.py:84 Request: POST https://httpbin.org/post
-DEBUG    test_engine:http_client.py:88 Body: {"username": "test", "password": 123456}
-ERROR    test_engine:http_client.py:108 Request Failed: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /post (Caused by ResponseError('too many 503 error responses')) (6490.41ms)
