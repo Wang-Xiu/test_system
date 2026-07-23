@@ -1,0 +1,1 @@
+[{"uid":"8db242af3b4f40c3","name":"获取用户信息（使用提取的变量）","time":{"start":1784784081362,"stop":1784784094512,"duration":13150},"status":"passed","severity":"normal"},{"uid":"e2dd4eb3b1b75923","name":"用户登录测试","time":{"start":1784784078133,"stop":1784784081360,"duration":3227},"status":"passed","severity":"normal"}]
