@@ -1,0 +1,17 @@
+{
+  "args": {
+    "timestamp": "${__timestamp}", 
+    "token": "test", 
+    "user_id": "1001"
+  }, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Content-Type": "application/json", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.32.5", 
+    "X-Amzn-Trace-Id": "Root=1-6a83c8b8-1ce265a842fe8e1d3fa37a50"
+  }, 
+  "origin": "4.155.63.185", 
+  "url": "https://httpbin.org/get?user_id=1001&token=test&timestamp=%24{__timestamp}"
+}
