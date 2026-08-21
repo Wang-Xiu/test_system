@@ -1,5 +1,0 @@
-INFO     test_engine:http_client.py:84 Request: GET https://httpbin.org/get
-DEBUG    test_engine:http_client.py:86 Params: {'user_id': 1001, 'token': 'test', 'timestamp': '${__timestamp}'}
-WARNING  urllib3.connectionpool:connectionpool.py:868 Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10)")': /get?user_id=1001&token=test&timestamp=%24%7B__timestamp%7D
-WARNING  urllib3.connectionpool:connectionpool.py:868 Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10)")': /get?user_id=1001&token=test&timestamp=%24%7B__timestamp%7D
-ERROR    test_engine:http_client.py:108 Request Failed: HTTPSConnectionPool(host='httpbin.org', port=443): Max retries exceeded with url: /get?user_id=1001&token=test&timestamp=%24%7B__timestamp%7D (Caused by ReadTimeoutError("HTTPSConnectionPool(host='httpbin.org', port=443): Read timed out. (read timeout=10)")) (46165.82ms)
