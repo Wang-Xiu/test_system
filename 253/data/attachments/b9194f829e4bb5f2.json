@@ -1,0 +1,1 @@
+[{"eq": {"status_code": 200}}, {"contains": {"body.json.username": "test"}}, {"in": {"status_code": [200, 201]}}]
